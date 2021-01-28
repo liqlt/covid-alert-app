@@ -11,18 +11,20 @@ import {Permissions} from './views/Permissions';
 import {Region} from './views/Region';
 import {ItemViewProps} from './views/ItemView';
 import {PartOf} from './views/PartOf';
+import { WhatItsNot } from './views/WhatItsNot';
 
-export type OnboardingKey = 'step-1' | 'step-2' | 'step-3' | 'step-4' | 'step-5' | 'step-6';
+export type OnboardingKey = 'step-1' | 'step-2' | 'step-3' | 'step-4' | 'step-5' | 'step-6' | 'step-7';
 
-export const onboardingData: OnboardingKey[] = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'step-6'];
+export const onboardingData: OnboardingKey[] = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5', 'step-6', 'step-7'];
 
 const viewComponents: {[key in OnboardingKey]: React.ComponentType<Pick<ItemViewProps, 'isActive'>>} = {
   'step-1': Start,
   'step-2': Anonymous,
   'step-3': HowItWorks,
   'step-4': PartOf,
-  'step-5': Permissions,
-  'step-6': Region,
+  'step-5': WhatItsNot,
+  'step-6': Permissions,
+  'step-7': Region,
 };
 
 export interface OnboardingContentProps {
